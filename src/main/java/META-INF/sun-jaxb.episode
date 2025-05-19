@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v4.0.5 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2025.05.19 a las 04:54:46 PM PET
+  -->
+  <bindings scd="x-schema::tns" if-exists="true" auto-acknowledge="true" xmlns:tns="https://www.w3schools.com/xml/">
+    <schemaBindings map="false">
+      <package name="pe.estebancoder.solutions.demo.wsclient.wsdl"/>
+    </schemaBindings>
+    <bindings scd="tns:FahrenheitToCelsius" if-exists="true" auto-acknowledge="true">
+      <class ref="pe.estebancoder.solutions.demo.wsclient.wsdl.FahrenheitToCelsius"/>
+    </bindings>
+    <bindings scd="tns:FahrenheitToCelsiusResponse" if-exists="true" auto-acknowledge="true">
+      <class ref="pe.estebancoder.solutions.demo.wsclient.wsdl.FahrenheitToCelsiusResponse"/>
+    </bindings>
+    <bindings scd="tns:CelsiusToFahrenheit" if-exists="true" auto-acknowledge="true">
+      <class ref="pe.estebancoder.solutions.demo.wsclient.wsdl.CelsiusToFahrenheit"/>
+    </bindings>
+    <bindings scd="tns:CelsiusToFahrenheitResponse" if-exists="true" auto-acknowledge="true">
+      <class ref="pe.estebancoder.solutions.demo.wsclient.wsdl.CelsiusToFahrenheitResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+
