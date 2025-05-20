@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
+import pe.estebancoder.solutions.demo.wsclient.config.SoapClientProperties;
 import pe.estebancoder.solutions.demo.wsclient.wsdl.CelsiusToFahrenheit;
 import pe.estebancoder.solutions.demo.wsclient.wsdl.CelsiusToFahrenheitResponse;
 
@@ -14,6 +15,7 @@ import pe.estebancoder.solutions.demo.wsclient.wsdl.CelsiusToFahrenheitResponse;
 public class TemperatureClient {
 
     private final WebServiceTemplate webServiceTemplate;
+    private final SoapClientProperties soapClientProperties;
 
     public String celsiusToFahrenheit(String celsius) {
         CelsiusToFahrenheit request = new CelsiusToFahrenheit();
@@ -21,7 +23,7 @@ public class TemperatureClient {
 
         log.info("Convirtiendo {} Celsius a Fahrenheit", celsius);
 
-        SoapActionCallback soapActionCallback = new SoapActionCallback("https://www.w3schools.com/xml/CelsiusToFahrenheit");
+        SoapActionCallback soapActionCallback = new SoapActionCallback(soapClientProperties.getCelsiusToFahrenheit());
 
         CelsiusToFahrenheitResponse response = (CelsiusToFahrenheitResponse)
                 webServiceTemplate.marshalSendAndReceive(request, soapActionCallback);

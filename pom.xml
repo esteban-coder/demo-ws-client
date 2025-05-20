@@ -39,6 +39,7 @@
             <groupId>org.springframework.ws</groupId>
             <artifactId>spring-ws-core</artifactId>
         </dependency>
+        <!-- para la configuracion de timeouts con HttpComponentsMessageSender -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
@@ -95,16 +96,32 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
+                            <generateDirectory>src/main/java</generateDirectory>
+                            <!-- IMPORTANTE: Este valor debe coincidir con soap.client.package en application.properties -->
+                            <generatePackage>pe.estebancoder.solutions.demo.wsclient.wsdl</generatePackage>
+
+                            <!-- Se generan los archivos del archivo local wsdl -->
+<!-- -->
                             <schemaDirectory>src/main/resources/wsdl</schemaDirectory>
                             <schemaIncludes>
                                 <include>*.wsdl</include>
                             </schemaIncludes>
-                            <generateDirectory>src/main/java</generateDirectory>
-                            <generatePackage>pe.estebancoder.solutions.demo.wsclient.wsdl</generatePackage>
+<!-- -->
+
+                            <!-- Se generan los archivos de la url del wsdl -->
+<!--
+                            <schemaLanguage>WSDL</schemaLanguage>
+                            <schemas>
+                                <schema>
+                                    <url>http://www.w3schools.com/xml/tempconvert.asmx?wsdl</url>
+                                </schema>
+                            </schemas>
+-->
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
